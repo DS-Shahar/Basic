@@ -55,7 +55,15 @@ public class BinNode<T> {
 		this.value = value;
 	}
 
-	public String toString() {
+	public String toString_DList() {
 		return value + " <=> " + right;
 	}  
+	
+  	/* Returns in-order string representation of the tree **/
+  	public String toString() {
+	    	// if leaf avoid recursion
+    		if (left == null && right == null)
+      			return value.toString();
+		return "( " + left + " " + value + " " + right + " )";
+  	}	
 }
